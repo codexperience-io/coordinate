@@ -6,7 +6,7 @@ Pod::Spec.new do |spec|
   This library helps you use the Coordinator Pattern in iOS. The Coordinator Pattern helps you manage the Navigation of your App and keep your code scalable, reusable and mantainable.
                    DESC
   spec.homepage     = "https://coordinate.codexperience.io/"
-  spec.license      = { :type => "MIT", :file => "FILE_LICENSE" }
+  spec.license      = { :type => "MIT", :file => "LICENSE" }
   spec.author             = { "Anderson" => "anderson@codexperience.io" }
   spec.social_media_url   = "https://twitter.com/imanderson_com"
   spec.ios.deployment_target     = "9"
