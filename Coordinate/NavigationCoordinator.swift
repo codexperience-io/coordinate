@@ -33,6 +33,13 @@ open class NavigationCoordinator<T: UINavigationController>: Coordinator<T>, UIN
         super.start(with: completion)
     }
     
+    open override func activate() {
+        super.activate()
+        
+        // Also activate the Coordinator of the visible UIViewController
+        rootViewController.topViewController?.coordinator?.activate()
+    }
+    
     //  MARK:- Navigation
     
     /*

@@ -23,12 +23,12 @@ open class TabBarCoordinator<T: UITabBarController>: Coordinator<T>, UITabBarCon
     */
     open func setCoordinators(_ coordinators: [Coordinating]) {
         coordinators.forEach { coordinator in
-            super.startChild(coordinator: coordinator) { [weak self] in
-                if self?.rootViewController.viewControllers == nil {
-                    self?.rootViewController.viewControllers = [coordinator.getRootViewController()]
-                } else {
-                    self?.rootViewController.viewControllers?.append(coordinator.getRootViewController())
-                }
+            self.addChild(coordinator: coordinator)
+            
+            if rootViewController.viewControllers == nil {
+                rootViewController.viewControllers = [coordinator.getRootViewController()]
+            } else {
+                rootViewController.viewControllers?.append(coordinator.getRootViewController())
             }
         }
     }

@@ -49,6 +49,7 @@ open class Coordinator<T: UIViewController>: UIResponder, Coordinating {
     public override init() {
         self.rootViewController = T()
         super.init()
+        rootViewController.coordinator = self
     }
     
     ///    Next coordinatingResponder for any Coordinator instance is its parent Coordinator.
@@ -73,7 +74,6 @@ open class Coordinator<T: UIViewController>: UIResponder, Coordinating {
     ///
     ///    Note: if you override this method, you must call `super` and pass the `completion` closure.
     open func start(with completion: @escaping () -> Void = {}) {
-        rootViewController.coordinator = self
         isStarted = true
         completion()
     }
@@ -116,14 +116,23 @@ open class Coordinator<T: UIViewController>: UIResponder, Coordinating {
     private(set) public var childCoordinators: [String: Coordinating] = [:]
     
     /**
-     Adds new child coordinator and starts it.
+     Adds new child coordinator.
+     */
+    public func addChild(coordinator: Coordinating) {
+        childCoordinators[coordinator.identifier] = coordinator
+        coordinator.parent = self
+    }
+    
+    /**
+     Starts child.
      
      - Parameter coordinator: The coordinator implementation to start.
      - Parameter completion: An optional `Callback` passed to the coordinator's `start()` method.
      */
     public func startChild(coordinator: Coordinating, completion: @escaping () -> Void = {}) {
-        childCoordinators[coordinator.identifier] = coordinator
-        coordinator.parent = self
+        if childCoordinators[coordinator.identifier] == nil {
+            self.addChild(coordinator: coordinator)
+        }
         coordinator.start(with: completion)
     }
     
