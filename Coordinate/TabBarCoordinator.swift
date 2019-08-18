@@ -2,13 +2,15 @@
 //  TabBarCoordinator.swift
 //  Coordinate Library
 //
-//  Copyright © 2019 · https://codexperience.io
+//  Copyright © 2019 codexperience.io · https://codexperience.io
+//  Website and Docs · https://coordinate.codexperience.io
 //  MIT License · http://choosealicense.com/licenses/mit/
 //
 
 import UIKit
 
-open class TabBarCoordinator<T: UITabBarController>: Coordinator<T>, UITabBarControllerDelegate {
+// The TabBarCoordinator is a specialized ContainerCoordinator for UITabBarController
+open class TabBarCoordinator<T: UITabBarController>: ContainerCoordinator<T>, UITabBarControllerDelegate {
     
     open override func start(with completion: @escaping () -> Void) {
         // assign itself as UITabBarControllerDelegate
@@ -21,7 +23,7 @@ open class TabBarCoordinator<T: UITabBarController>: Coordinator<T>, UITabBarCon
      Analog to UITabBarController.setControllers(),
      Use this to set the UITabBarController children Coordinators and its UIViewControllers/Tabs pairs
     */
-    open func setCoordinators(_ coordinators: [Coordinating]) {
+    open func setCoordinators(_ coordinators: [Coordinated]) {
         coordinators.forEach { coordinator in
             self.addChild(coordinator: coordinator)
             
@@ -39,7 +41,7 @@ open class TabBarCoordinator<T: UITabBarController>: Coordinator<T>, UITabBarCon
      
      By default it selects the Coordinator immediately
     */
-    open func tabTapped(for coordinator: Coordinating) {
+    open func tabTapped(for coordinator: Coordinated) {
         select(coordinator)
     }
     
@@ -48,7 +50,7 @@ open class TabBarCoordinator<T: UITabBarController>: Coordinator<T>, UITabBarCon
     /*
      Allows you to programatically select a Tab corresponding to the Coordinator you want
     */
-    open func select(_ coordinator: Coordinating) {
+    open func select(_ coordinator: Coordinated) {
         
         startOrActivateChild(coordinator: coordinator)
         

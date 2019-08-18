@@ -7,16 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D9CF81242303827B002B1B8D /* HasDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CF81232303827B002B1B8D /* HasDependencies.swift */; };
+		D9CF81262304AC4A002B1B8D /* HasRoutes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9CF81252304AC4A002B1B8D /* HasRoutes.swift */; };
 		D9D6F93622F1E3D0003DC7EA /* Coordinate.h in Headers */ = {isa = PBXBuildFile; fileRef = D9D6F93422F1E3D0003DC7EA /* Coordinate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D9D6F94222F2FD3E003DC7EA /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D6F93C22F2FD3E003DC7EA /* TabBarCoordinator.swift */; };
 		D9D6F94322F2FD3E003DC7EA /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D6F93D22F2FD3E003DC7EA /* Coordinator.swift */; };
 		D9D6F94422F2FD3E003DC7EA /* UIKit-CoordinatingExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D6F93E22F2FD3E003DC7EA /* UIKit-CoordinatingExtensions.swift */; };
 		D9D6F94522F2FD3E003DC7EA /* ContainerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D6F93F22F2FD3E003DC7EA /* ContainerCoordinator.swift */; };
-		D9D6F94622F2FD3E003DC7EA /* Coordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D6F94022F2FD3E003DC7EA /* Coordinating.swift */; };
+		D9D6F94622F2FD3E003DC7EA /* Coordinated+Coordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D6F94022F2FD3E003DC7EA /* Coordinated+Coordinating.swift */; };
 		D9D6F94722F2FD3E003DC7EA /* NavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9D6F94122F2FD3E003DC7EA /* NavigationCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D9CF81232303827B002B1B8D /* HasDependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HasDependencies.swift; sourceTree = "<group>"; };
+		D9CF81252304AC4A002B1B8D /* HasRoutes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasRoutes.swift; sourceTree = "<group>"; };
 		D9D6F93122F1E3D0003DC7EA /* Coordinate.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Coordinate.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9D6F93422F1E3D0003DC7EA /* Coordinate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Coordinate.h; sourceTree = "<group>"; };
 		D9D6F93522F1E3D0003DC7EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -24,7 +28,7 @@
 		D9D6F93D22F2FD3E003DC7EA /* Coordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		D9D6F93E22F2FD3E003DC7EA /* UIKit-CoordinatingExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIKit-CoordinatingExtensions.swift"; sourceTree = "<group>"; };
 		D9D6F93F22F2FD3E003DC7EA /* ContainerCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerCoordinator.swift; sourceTree = "<group>"; };
-		D9D6F94022F2FD3E003DC7EA /* Coordinating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Coordinating.swift; sourceTree = "<group>"; };
+		D9D6F94022F2FD3E003DC7EA /* Coordinated+Coordinating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Coordinated+Coordinating.swift"; sourceTree = "<group>"; };
 		D9D6F94122F2FD3E003DC7EA /* NavigationCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -58,14 +62,16 @@
 		D9D6F93322F1E3D0003DC7EA /* Coordinate */ = {
 			isa = PBXGroup;
 			children = (
+				D9CF81232303827B002B1B8D /* HasDependencies.swift */,
 				D9D6F93F22F2FD3E003DC7EA /* ContainerCoordinator.swift */,
-				D9D6F94022F2FD3E003DC7EA /* Coordinating.swift */,
+				D9D6F94022F2FD3E003DC7EA /* Coordinated+Coordinating.swift */,
 				D9D6F93D22F2FD3E003DC7EA /* Coordinator.swift */,
 				D9D6F94122F2FD3E003DC7EA /* NavigationCoordinator.swift */,
 				D9D6F93C22F2FD3E003DC7EA /* TabBarCoordinator.swift */,
 				D9D6F93E22F2FD3E003DC7EA /* UIKit-CoordinatingExtensions.swift */,
 				D9D6F93422F1E3D0003DC7EA /* Coordinate.h */,
 				D9D6F93522F1E3D0003DC7EA /* Info.plist */,
+				D9CF81252304AC4A002B1B8D /* HasRoutes.swift */,
 			);
 			path = Coordinate;
 			sourceTree = "<group>";
@@ -149,9 +155,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9CF81262304AC4A002B1B8D /* HasRoutes.swift in Sources */,
 				D9D6F94522F2FD3E003DC7EA /* ContainerCoordinator.swift in Sources */,
+				D9CF81242303827B002B1B8D /* HasDependencies.swift in Sources */,
 				D9D6F94322F2FD3E003DC7EA /* Coordinator.swift in Sources */,
-				D9D6F94622F2FD3E003DC7EA /* Coordinating.swift in Sources */,
+				D9D6F94622F2FD3E003DC7EA /* Coordinated+Coordinating.swift in Sources */,
 				D9D6F94422F2FD3E003DC7EA /* UIKit-CoordinatingExtensions.swift in Sources */,
 				D9D6F94722F2FD3E003DC7EA /* NavigationCoordinator.swift in Sources */,
 				D9D6F94222F2FD3E003DC7EA /* TabBarCoordinator.swift in Sources */,

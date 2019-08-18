@@ -2,7 +2,8 @@
 //  UIKit-CoordinatingExtensions.swift
 //  Coordinate Library
 //
-//  Copyright © 2019 · https://codexperience.io
+//  Copyright © 2019 codexperience.io · https://codexperience.io
+//  Website and Docs · https://coordinate.codexperience.io
 //  MIT License · http://choosealicense.com/licenses/mit/
 //
 
@@ -14,9 +15,9 @@ extension UIViewController {
 		static var Coordinator = "Coordinator"
 	}
 
-	public weak var coordinator: Coordinating? {
+	public weak var coordinator: Coordinated? {
 		get {
-			return objc_getAssociatedObject(self, &AssociatedKeys.Coordinator) as? Coordinating
+			return objc_getAssociatedObject(self, &AssociatedKeys.Coordinator) as? Coordinated
 		}
 		set {
 			objc_setAssociatedObject(self, &AssociatedKeys.Coordinator, newValue, .OBJC_ASSOCIATION_ASSIGN)

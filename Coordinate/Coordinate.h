@@ -2,7 +2,8 @@
 //  Coordinate.h
 //  Coordinate Library
 //
-//  Copyright © 2019 · https://codexperience.io
+//  Copyright © 2019 codexperience.io · https://codexperience.io
+//  Website and Docs · https://coordinate.codexperience.io
 //  MIT License · http://choosealicense.com/licenses/mit/
 //
 
