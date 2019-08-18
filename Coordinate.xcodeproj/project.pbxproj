@@ -62,16 +62,16 @@
 		D9D6F93322F1E3D0003DC7EA /* Coordinate */ = {
 			isa = PBXGroup;
 			children = (
-				D9CF81232303827B002B1B8D /* HasDependencies.swift */,
-				D9D6F93F22F2FD3E003DC7EA /* ContainerCoordinator.swift */,
 				D9D6F94022F2FD3E003DC7EA /* Coordinated+Coordinating.swift */,
 				D9D6F93D22F2FD3E003DC7EA /* Coordinator.swift */,
+				D9D6F93F22F2FD3E003DC7EA /* ContainerCoordinator.swift */,
 				D9D6F94122F2FD3E003DC7EA /* NavigationCoordinator.swift */,
 				D9D6F93C22F2FD3E003DC7EA /* TabBarCoordinator.swift */,
 				D9D6F93E22F2FD3E003DC7EA /* UIKit-CoordinatingExtensions.swift */,
 				D9D6F93422F1E3D0003DC7EA /* Coordinate.h */,
-				D9D6F93522F1E3D0003DC7EA /* Info.plist */,
+				D9CF81232303827B002B1B8D /* HasDependencies.swift */,
 				D9CF81252304AC4A002B1B8D /* HasRoutes.swift */,
+				D9D6F93522F1E3D0003DC7EA /* Info.plist */,
 			);
 			path = Coordinate;
 			sourceTree = "<group>";
