@@ -10,7 +10,7 @@
 import UIKit
 
 // The TabBarCoordinator is a specialized ContainerCoordinator for UITabBarController
-open class TabBarCoordinator<T: UITabBarController>: ContainerCoordinator<T>, UITabBarControllerDelegate {
+open class TabBarCoordinator<T>: ContainerCoordinator<T>, UITabBarControllerDelegate where T: UITabBarController, T: Coordinated {
     
     open override func start(with completion: @escaping () -> Void) {
         // assign itself as UITabBarControllerDelegate
@@ -23,7 +23,7 @@ open class TabBarCoordinator<T: UITabBarController>: ContainerCoordinator<T>, UI
      Analog to UITabBarController.setControllers(),
      Use this to set the UITabBarController children Coordinators and its UIViewControllers/Tabs pairs
     */
-    open func setCoordinators(_ coordinators: [Coordinated]) {
+    open func setCoordinators(_ coordinators: [Coordinating]) {
         coordinators.forEach { coordinator in
             self.addChild(coordinator: coordinator)
             
@@ -41,7 +41,7 @@ open class TabBarCoordinator<T: UITabBarController>: ContainerCoordinator<T>, UI
      
      By default it selects the Coordinator immediately
     */
-    open func tabTapped(for coordinator: Coordinated) {
+    open func tabTapped(for coordinator: Coordinating) {
         select(coordinator)
     }
     
@@ -50,7 +50,7 @@ open class TabBarCoordinator<T: UITabBarController>: ContainerCoordinator<T>, UI
     /*
      Allows you to programatically select a Tab corresponding to the Coordinator you want
     */
-    open func select(_ coordinator: Coordinated) {
+    open func select(_ coordinator: Coordinating) {
         
         startOrActivateChild(coordinator: coordinator)
         
@@ -71,8 +71,9 @@ open class TabBarCoordinator<T: UITabBarController>: ContainerCoordinator<T>, UI
      It calls tabTapped with the Coordinator from the specific UIViewController
     */
     open func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
-        
-        if let coordinator = viewController.coordinator {
+        guard let viewController = viewController as? Coordinated else { return false }
+
+        if let coordinator = viewController.parentCoordinator {
             tabTapped(for: coordinator)
         }
         

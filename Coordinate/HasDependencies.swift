@@ -24,7 +24,7 @@ public protocol HasDependencies: HasDependenciesProtocol {
     var dependencies: DependeciesType? { get set }
 }
 
-public extension HasDependencies where Self: Coordinated {
+public extension HasDependencies where Self: Coordinating {
     func setDependencies(dependencies: AppDependenciesProtocol?) {
         if let dependencies = dependencies as? DependeciesType {
             self.dependencies = dependencies
@@ -36,7 +36,7 @@ public extension HasDependencies where Self: Coordinated {
     }
 }
 
-public extension HasDependencies where Self: Coordinating {
+internal extension HasDependencies where Self: HasChildren {
     func setDependencies(dependencies: AppDependenciesProtocol?) {
         if let dependencies = dependencies as? DependeciesType {
             self.dependencies = dependencies

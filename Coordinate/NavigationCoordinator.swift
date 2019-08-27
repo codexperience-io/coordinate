@@ -10,7 +10,7 @@
 import UIKit
 
 // The NavigationCoordinator is a specialized ContainerCoordinator for UINavigationControlelrs
-open class NavigationCoordinator<T: UINavigationController>: ContainerCoordinator<T>, UINavigationControllerDelegate {
+open class NavigationCoordinator<T>: ContainerCoordinator<T>, UINavigationControllerDelegate where T: UINavigationController, T: Coordinated {
 
     /*
      This is a mirror of the UINavigationController.viewControllers, useful to test later if a UIViewController was popped or not
@@ -22,7 +22,7 @@ open class NavigationCoordinator<T: UINavigationController>: ContainerCoordinato
      
         By default, it activates the Coordinator that was popped into
      */
-    open func poppedBack(to coordinator: Coordinated?) {
+    open func poppedBack(to coordinator: Coordinating?) {
         coordinator?.activate()
     }
 
@@ -39,7 +39,8 @@ open class NavigationCoordinator<T: UINavigationController>: ContainerCoordinato
         super.activate()
         
         // Also activate the Coordinator of the visible UIViewController
-        rootViewController.topViewController?.coordinator?.activate()
+        guard let topViewController = rootViewController.topViewController as? Coordinated else { return }
+        topViewController.parentCoordinator?.activate()
     }
     
     //  MARK:- Navigation
@@ -47,7 +48,7 @@ open class NavigationCoordinator<T: UINavigationController>: ContainerCoordinato
     /*
      This is a convenience method to set the rootViewController from the UINavigationController, or to pop to it in case it is already on the navigation stack
     */
-    open override func root(_ coordinator: Coordinated, animated: Bool = false, completion: (() -> Void)? = nil) {
+    open override func root(_ coordinator: Coordinating, animated: Bool = false, completion: (() -> Void)? = nil) {
         self.startOrActivateChild(coordinator: coordinator)
         let viewController = coordinator.getRootViewController()
 
@@ -64,7 +65,7 @@ open class NavigationCoordinator<T: UINavigationController>: ContainerCoordinato
      If a Coordinator+UIViewController is already on the navigation stack, the UINavigationController will be pop to it
      If you override this method, keep in mind that UIViewController cannot be pushed twice to the same navigation stack, or you will get an error
     */
-    open override func show(_ coordinator: Coordinated, sender: Any?) {
+    open override func show(_ coordinator: Coordinating, sender: Any?) {
         self.startOrActivateChild(coordinator: coordinator)
         let viewController = coordinator.getRootViewController()
         
@@ -80,7 +81,7 @@ open class NavigationCoordinator<T: UINavigationController>: ContainerCoordinato
     /*
      Analog to UINavigationController.popToViewController()
     */
-    open func popToCoordinator(_ coordinator: Coordinated, animated: Bool) {
+    open func popToCoordinator(_ coordinator: Coordinating, animated: Bool) {
         self.startOrActivateChild(coordinator: coordinator)
         let viewController = coordinator.getRootViewController()
         
@@ -110,9 +111,11 @@ open class NavigationCoordinator<T: UINavigationController>: ContainerCoordinato
             return
         }
         
+        guard let viewController = viewController as? Coordinated else { return }
+        
         // Means that the UINavigationController actually popped to another UIViewController, so here we call poppedBack() to have a chance
         // of reacting to this event
-        poppedBack(to: viewController.coordinator)
+        poppedBack(to: viewController.parentCoordinator)
     }
     
     /*

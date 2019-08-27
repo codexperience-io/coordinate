@@ -11,30 +11,24 @@ import UIKit
 
 // Main Coordinator instance, where T is UIViewController or any of its subclasses
 // This is the base Coordinator class, intended to be used for simple Coordinators that do not manage any child Coordinator. Use this as a wrapper to encapsulate your UIViewController, to manage its data fetching, modeling and other stuff that should not be of the UIViewController's concern. The idea is that the UIViewController will only need input of information to produce an output, it should not care about where this data came from and who and how is presenting it
-open class Coordinator<T: UIViewController>: UIResponder, Coordinated {
-    
-    public let rootViewController: T
+open class Coordinator<T: UIViewController>: NSObject, Coordinating where T: Coordinated {
+    public var rootViewController: T
     
     open lazy var identifier: String = {
         return String(describing: type(of: self))
     }()
     
-    open weak var parent: Coordinating?
+    open weak var parentCoordinator: Coordinating?
     
     private(set) public var isStarted: Bool = false
-    
-    // Next coordinatingResponder for any Coordinator instance is its parent Coordinator.
-    open override var coordinatingResponder: UIResponder? {
-        return parent as? UIResponder
-    }
     
     // This is the beginning of the Coordinator Lifecycle. It will set the rootViewController as a instance of T and assign itself as the Coordinator of the same UIViewController.
     //
     // If you need to override this, because your T needs arguments to be initialized or other reason, do not forget to assign this Coordinator rootViewController and the UIViewController Coordinator to this instance. This is essentially the required connection to make the rest work
-    public override init() {
+    public override init()  {
         self.rootViewController = T()
         super.init()
-        rootViewController.coordinator = self
+        rootViewController.parentCoordinator = self
     }
     
     // MARK:- Lifecycle
@@ -57,7 +51,7 @@ open class Coordinator<T: UIViewController>: UIResponder, Coordinated {
     //
     // Note: if you override this method, you must call `super` and pass the `completion` closure.
     open func stop(with completion: @escaping () -> Void = {}) {
-        rootViewController.coordinator = nil
+        rootViewController.parentCoordinator = nil
         isStarted = false
         completion()
     }
@@ -68,5 +62,18 @@ open class Coordinator<T: UIViewController>: UIResponder, Coordinated {
     
     public func getRootViewController() -> UIViewController {
         return rootViewController
+    }
+    
+    // MARK: - HasEvents
+    
+    public func emitEvent(_ event: CoordinateEvent) {
+        if self.interceptEvent(event) == false {
+            parentCoordinator?.emitEvent(event)
+        }
+    }
+    
+    // default implementation, to capture events override this method to perform the logic you want
+    open func interceptEvent(_ event: CoordinateEvent) -> Bool {
+        return false
     }
 }
