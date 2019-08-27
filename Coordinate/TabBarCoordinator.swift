@@ -23,7 +23,7 @@ open class TabBarCoordinator<T>: ContainerCoordinator<T>, UITabBarControllerDele
      Analog to UITabBarController.setControllers(),
      Use this to set the UITabBarController children Coordinators and its UIViewControllers/Tabs pairs
     */
-    open func setCoordinators(_ coordinators: [Coordinating]) {
+    public func setCoordinators(_ coordinators: [Coordinating]) {
         coordinators.forEach { coordinator in
             self.addChild(coordinator: coordinator)
             
@@ -50,7 +50,7 @@ open class TabBarCoordinator<T>: ContainerCoordinator<T>, UITabBarControllerDele
     /*
      Allows you to programatically select a Tab corresponding to the Coordinator you want
     */
-    open func select(_ coordinator: Coordinating) {
+    public func select(_ coordinator: Coordinating) {
         
         startOrActivateChild(coordinator: coordinator)
         
@@ -70,7 +70,7 @@ open class TabBarCoordinator<T>: ContainerCoordinator<T>, UITabBarControllerDele
      Deactivate automatic Tab switch on UITabBarController
      It calls tabTapped with the Coordinator from the specific UIViewController
     */
-    open func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+    public func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         guard let viewController = viewController as? Coordinated else { return false }
 
         if let coordinator = viewController.parentCoordinator {

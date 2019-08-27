@@ -48,7 +48,7 @@ open class NavigationCoordinator<T>: ContainerCoordinator<T>, UINavigationContro
     /*
      This is a convenience method to set the rootViewController from the UINavigationController, or to pop to it in case it is already on the navigation stack
     */
-    open override func root(_ coordinator: Coordinating, animated: Bool = false, completion: (() -> Void)? = nil) {
+    public override func root(_ coordinator: Coordinating, animated: Bool = false, completion: (() -> Void)? = nil) {
         self.startOrActivateChild(coordinator: coordinator)
         let viewController = coordinator.getRootViewController()
 
@@ -65,7 +65,7 @@ open class NavigationCoordinator<T>: ContainerCoordinator<T>, UINavigationContro
      If a Coordinator+UIViewController is already on the navigation stack, the UINavigationController will be pop to it
      If you override this method, keep in mind that UIViewController cannot be pushed twice to the same navigation stack, or you will get an error
     */
-    open override func show(_ coordinator: Coordinating, sender: Any?) {
+    public override func show(_ coordinator: Coordinating, sender: Any?) {
         self.startOrActivateChild(coordinator: coordinator)
         let viewController = coordinator.getRootViewController()
         
@@ -81,7 +81,7 @@ open class NavigationCoordinator<T>: ContainerCoordinator<T>, UINavigationContro
     /*
      Analog to UINavigationController.popToViewController()
     */
-    open func popToCoordinator(_ coordinator: Coordinating, animated: Bool) {
+    public func popToCoordinator(_ coordinator: Coordinating, animated: Bool) {
         self.startOrActivateChild(coordinator: coordinator)
         let viewController = coordinator.getRootViewController()
         
@@ -93,7 +93,7 @@ open class NavigationCoordinator<T>: ContainerCoordinator<T>, UINavigationContro
     /*
      This method tries to determine if a UIViewController was effectively popped (i.e. is back visually on the navigation stack)
     */
-    open func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+    public func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
         
         // No change, so we don't need to react to it
         if viewController === currentViewControllers.last {

@@ -21,7 +21,7 @@ open class ContainerCoordinator<T>: Coordinator<T>, HasChildren where T: UIViewC
     /**
      Adds new child coordinator.
      */
-    public func addChild(coordinator: Coordinating) {
+    internal func addChild(coordinator: Coordinating) {
         childCoordinators[coordinator.identifier] = coordinator
         coordinator.parentCoordinator = self
     }
@@ -32,7 +32,7 @@ open class ContainerCoordinator<T>: Coordinator<T>, HasChildren where T: UIViewC
      - Parameter coordinator: The coordinator implementation to start.
      - Parameter completion: An optional `Callback` passed to the coordinator's `start()` method.
      */
-    public func startChild(coordinator: Coordinating, completion: @escaping () -> Void = {}) {
+    internal func startChild(coordinator: Coordinating, completion: @escaping () -> Void = {}) {
         if childCoordinators[coordinator.identifier] == nil {
             self.addChild(coordinator: coordinator)
         }
@@ -45,7 +45,7 @@ open class ContainerCoordinator<T>: Coordinator<T>, HasChildren where T: UIViewC
      - Parameter coordinator: The coordinator implementation to stop.
      - Parameter completion: An optional `Callback` passed to the coordinator's `stop()` method.
      */
-    public func stopChild(coordinator: Coordinating, completion: @escaping () -> Void = {}) {
+    internal func stopChild(coordinator: Coordinating, completion: @escaping () -> Void = {}) {
         coordinator.parentCoordinator = nil
         coordinator.stop {
             [unowned self] in
@@ -62,7 +62,7 @@ open class ContainerCoordinator<T>: Coordinator<T>, HasChildren where T: UIViewC
         return childCoordinators[identifier] as? C
     }
     
-    public func startOrActivateChild(coordinator: Coordinating) {
+    internal func startOrActivateChild(coordinator: Coordinating) {
         if let parentHasDependencies = self as? HasDependenciesProtocol, let childHasDependencies = coordinator as? HasDependenciesProtocol {
             childHasDependencies.setDependencies(dependencies: parentHasDependencies.getDepencencies())
         }
@@ -81,17 +81,17 @@ open class ContainerCoordinator<T>: Coordinator<T>, HasChildren where T: UIViewC
     
     // If you need, you can implement other presentation methods, but remember to always call `startOrActivateChild` on the Coordinator that is going to be presented
     
-    open func show(_ coordinator: Coordinating, sender: Any?) {
+    public func show(_ coordinator: Coordinating, sender: Any?) {
         startOrActivateChild(coordinator: coordinator)
         rootViewController.show(coordinator.getRootViewController(), sender: sender)
     }
     
-    open func present(_ coordinator: Coordinating, animated: Bool, completion: (() -> Void)?) {
+    public func present(_ coordinator: Coordinating, animated: Bool, completion: (() -> Void)?) {
         startOrActivateChild(coordinator: coordinator)
         rootViewController.present(coordinator.getRootViewController(), animated: animated, completion: completion)
     }
     
-    open func dismiss(animated: Bool = true, completion: (() -> Void)? = nil) {
+    public func dismiss(animated: Bool = true, completion: (() -> Void)? = nil) {
         rootViewController.dismiss(animated: animated, completion: completion)
     }
     
@@ -102,7 +102,7 @@ open class ContainerCoordinator<T>: Coordinator<T>, HasChildren where T: UIViewC
      
      You can override this method and use custom Animations/Transitions
     */
-    open func root(_ coordinator: Coordinating, animated: Bool = false, completion: (() -> Void)? = nil) {
+    public func root(_ coordinator: Coordinating, animated: Bool = false, completion: (() -> Void)? = nil) {
         startOrActivateChild(coordinator: coordinator)
         
         let viewController = coordinator.getRootViewController()

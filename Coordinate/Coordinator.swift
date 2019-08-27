@@ -57,8 +57,7 @@ open class Coordinator<T>: NSObject, Coordinating where T: UIViewController, T: 
     }
     
     // By default this is empy, but always call super.activte() in case you override this to make sure its compatible with future implementations
-    open func activate() {
-    }
+    open func activate() {}
     
     public func getRootViewController() -> UIViewController {
         return rootViewController
@@ -72,7 +71,7 @@ open class Coordinator<T>: NSObject, Coordinating where T: UIViewController, T: 
         }
     }
     
-    // default implementation, to capture events override this method to perform the logic you want
+    // Use this method to intercept events and react to them. Return true to stop the event propagation
     open func interceptEvent(_ event: CoordinateEvents) -> Bool {
         return false
     }
