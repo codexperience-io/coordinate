@@ -11,7 +11,7 @@ import UIKit
 
 // Main Coordinator instance, where T is UIViewController or any of its subclasses
 // This is the base Coordinator class, intended to be used for simple Coordinators that do not manage any child Coordinator. Use this as a wrapper to encapsulate your UIViewController, to manage its data fetching, modeling and other stuff that should not be of the UIViewController's concern. The idea is that the UIViewController will only need input of information to produce an output, it should not care about where this data came from and who and how is presenting it
-open class Coordinator<T: UIViewController>: NSObject, Coordinating where T: Coordinated {
+open class Coordinator<T>: NSObject, Coordinating where T: UIViewController, T: Coordinated {
     public var rootViewController: T
     
     open lazy var identifier: String = {
@@ -66,14 +66,14 @@ open class Coordinator<T: UIViewController>: NSObject, Coordinating where T: Coo
     
     // MARK: - HasEvents
     
-    public func emitEvent(_ event: CoordinateEvent) {
+    public func emitEvent(_ event: CoordinateEvents) {
         if self.interceptEvent(event) == false {
             parentCoordinator?.emitEvent(event)
         }
     }
     
     // default implementation, to capture events override this method to perform the logic you want
-    open func interceptEvent(_ event: CoordinateEvent) -> Bool {
+    open func interceptEvent(_ event: CoordinateEvents) -> Bool {
         return false
     }
 }
