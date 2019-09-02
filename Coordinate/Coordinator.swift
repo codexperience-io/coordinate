@@ -9,8 +9,8 @@
 
 import UIKit
 
-// Main Coordinator instance, where T is UIViewController or any of its subclasses
-// This is the base Coordinator class, intended to be used for simple Coordinators that do not manage any child Coordinator. Use this as a wrapper to encapsulate your UIViewController, to manage its data fetching, modeling and other stuff that should not be of the UIViewController's concern. The idea is that the UIViewController will only need input of information to produce an output, it should not care about where this data came from and who and how is presenting it
+// This is the base Coordinator class, for cases that you do not need manage any child Coordinator.
+// Intended to be used as a wrapper to your UIViewController and manage its data fetching and other concerns, keeping your UIViewController as simple as possible.
 open class Coordinator<T>: NSObject, Coordinating where T: UIViewController, T: Coordinated {
     public var rootViewController: T
     
