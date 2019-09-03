@@ -1,5 +1,7 @@
 # Coordinate
 
+![Documentation Status](docs/swift_output/badge.svg)
+
 **Coordinate** is a lightweight library that allows you to write scalable and highly maintainable iOS apps.
 
 It implements the _Coordinator Pattern_ and a few other concepts to help you build apps with a structure that is very easy to understand, with great separation of concerns, a clear navigation flow and encapsulated objects so that you can spend more time implementing cool features and less time refactoring.
