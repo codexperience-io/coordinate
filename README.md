@@ -1,6 +1,6 @@
 # Coordinate
 
-![Documentation Status](docs/swift_output/badge.svg)
+![Documentation Status](docs/badge.svg)
 
 **Coordinate** is a lightweight library that allows you to write scalable and highly maintainable iOS apps.
 
@@ -27,6 +27,12 @@ The [Coordinate Example App](https://github.com/codexperience-io/coordinate-exam
 
 ### Documentation 
 
+#### Coordinate Webpage
+
 We have put together learning material that we think will help you understand **Coordinate** and quickly start using it.
 
 Please refer to the **documentation** website at [coordinate.codexperience.io](https://coordinate.codexperience.io)
+
+#### Generated API Reference
+
+We also include the documents generated with [Jazzy](https://github.com/realm/jazzy) on the "docs" folder. 
