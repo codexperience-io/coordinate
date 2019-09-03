@@ -35,4 +35,6 @@ Please refer to the **documentation** website at [coordinate.codexperience.io](h
 
 #### Generated API Reference
 
-We also include the documents generated with [Jazzy](https://github.com/realm/jazzy) on the "docs" folder. 
+We include the documents generated with [Jazzy](https://github.com/realm/jazzy) on the "docs" folder.
+
+You can also read them online at [https://codexperience-io.github.io/coordinate/](https://codexperience-io.github.io/coordinate/).
