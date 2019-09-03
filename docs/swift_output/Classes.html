@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Classes  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Section/Classes" class="dashAnchor"></a>
+    <a title="Classes  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html">Coordinate 1.0.0 Docs</a> (100% documented)</p>
+        <p class="header-right"><a href="https://github.com/codexperience-io/coordinate/"><img src="img/gh.png"/>View on GitHub</a></p>
+        <p class="header-right"><a href="dash-feed://https%3A%2F%2Fcoordinate%2Ecodexperience%2Eio%2Fapi%2Fdocsets%2FCoordinate%2Exml"><img src="img/dash.png"/>Install in Dash</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html">Coordinate Reference</a>
+        <img id="carat" src="img/carat.png" />
+        Classes  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/ContainerCoordinator.html">ContainerCoordinator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/Coordinator.html">Coordinator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/NavigationCoordinator.html">NavigationCoordinator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/TabBarCoordinator.html">TabBarCoordinator</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Extensions/UIResponder.html">UIResponder</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Protocols.html#/s:10Coordinate23AppDependenciesProtocolP">AppDependenciesProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols.html#/s:10Coordinate0A6EventsP">CoordinateEvents</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/Coordinated.html">Coordinated</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/Coordinating.html">Coordinating</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/HasDependencies.html">HasDependencies</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/HasDependenciesProtocol.html">HasDependenciesProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/HasEvents.html">HasEvents</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/HasRoutes.html">HasRoutes</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>Classes</h1>
+            <p>The following classes are available globally.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Coordinate20ContainerCoordinatorC"></a>
+                    <a name="//apple_ref/swift/Class/ContainerCoordinator" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Coordinate20ContainerCoordinatorC">ContainerCoordinator</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The simplest Coordinator that can have other children Coordinators.</p>
+
+<p>This does everything that Coordinator does plus managing the hierarchy and navigation flow, i.e. how the children are presented and where in the navigation flow.
+The idea is that you can use it as a <q>switch</q> between any kind of Coordinator.</p>
+
+                        <a href="Classes/ContainerCoordinator.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">ContainerCoordinator</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span> <span class="p">:</span> <span class="kt"><a href="Classes/Coordinator.html">Coordinator</a></span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">,</span> <span class="kt">HasChildren</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="Protocols/Coordinated.html">Coordinated</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/codexperience-io/coordinate/tree/master/Coordinate/ContainerCoordinator.swift#L18-L200">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Coordinate11CoordinatorC"></a>
+                    <a name="//apple_ref/swift/Class/Coordinator" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Coordinate11CoordinatorC">Coordinator</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This is the base Coordinator class, for cases that you do not need manage any child Coordinator.
+Intended to be used as a wrapper to your UIViewController and manage its data fetching and other concerns, keeping your UIViewController as simple as possible.</p>
+
+<p>T must be a UIViewController and at the same time conform to <code><a href="Protocols/Coordinated.html">Coordinated</a></code></p>
+
+                        <a href="Classes/Coordinator.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">Coordinator</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span> <span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt"><a href="Protocols/Coordinating.html">Coordinating</a></span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="Protocols/Coordinated.html">Coordinated</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/codexperience-io/coordinate/tree/master/Coordinate/Coordinator.swift#L18-L106">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Coordinate21NavigationCoordinatorC"></a>
+                    <a name="//apple_ref/swift/Class/NavigationCoordinator" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Coordinate21NavigationCoordinatorC">NavigationCoordinator</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The NavigationCoordinator is a specialized <code><a href="Classes/ContainerCoordinator.html">ContainerCoordinator</a></code> for UINavigationControlelrs</p>
+
+<p>It is to be used with a UINavigationController as rootViewController and it has specific logic to cope with the intricacies of said UINavigationController. It has specialized presentation methods that mirror the ones from UINavigationController.</p>
+
+                        <a href="Classes/NavigationCoordinator.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">NavigationCoordinator</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span> <span class="p">:</span> <span class="kt"><a href="Classes/ContainerCoordinator.html">ContainerCoordinator</a></span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">,</span> <span class="kt">UINavigationControllerDelegate</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt">UINavigationController</span><span class="p">,</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="Protocols/Coordinated.html">Coordinated</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/codexperience-io/coordinate/tree/master/Coordinate/NavigationCoordinator.swift#L17-L181">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Coordinate17TabBarCoordinatorC"></a>
+                    <a name="//apple_ref/swift/Class/TabBarCoordinator" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Coordinate17TabBarCoordinatorC">TabBarCoordinator</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The TabBarCoordinator is a specialized ContainerCoordinator for UITabBarController</p>
+
+<p>It is to be used with a UITabBarCoordinator as rootViewController and has specific logic to cope with the intricacies of said UITabBarController. It has specialized presentation methods that mirror the ones from UITabBarController.</p>
+
+                        <a href="Classes/TabBarCoordinator.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">TabBarCoordinator</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span> <span class="p">:</span> <span class="kt"><a href="Classes/ContainerCoordinator.html">ContainerCoordinator</a></span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">,</span> <span class="kt">UITabBarControllerDelegate</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt">UITabBarController</span><span class="p">,</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="Protocols/Coordinated.html">Coordinated</a></span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/codexperience-io/coordinate/tree/master/Coordinate/TabBarCoordinator.swift#L17-L102">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2019 <a class="link" href="https://codexperience.io" target="_blank" rel="external">codexperience.io</a>. All rights reserved. (Last updated: 2019-09-03)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.10.0</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

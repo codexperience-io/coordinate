@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ContainerCoordinator Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/ContainerCoordinator" class="dashAnchor"></a>
+    <a title="ContainerCoordinator Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">Coordinate 1.0.0 Docs</a> (100% documented)</p>
+        <p class="header-right"><a href="https://github.com/codexperience-io/coordinate/"><img src="../img/gh.png"/>View on GitHub</a></p>
+        <p class="header-right"><a href="dash-feed://https%3A%2F%2Fcoordinate%2Ecodexperience%2Eio%2Fapi%2Fdocsets%2FCoordinate%2Exml"><img src="../img/dash.png"/>Install in Dash</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">Coordinate Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        ContainerCoordinator Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/ContainerCoordinator.html">ContainerCoordinator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Coordinator.html">Coordinator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/NavigationCoordinator.html">NavigationCoordinator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TabBarCoordinator.html">TabBarCoordinator</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/UIResponder.html">UIResponder</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols.html#/s:10Coordinate23AppDependenciesProtocolP">AppDependenciesProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols.html#/s:10Coordinate0A6EventsP">CoordinateEvents</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Coordinated.html">Coordinated</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Coordinating.html">Coordinating</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/HasDependencies.html">HasDependencies</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/HasDependenciesProtocol.html">HasDependenciesProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/HasEvents.html">HasEvents</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/HasRoutes.html">HasRoutes</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>ContainerCoordinator</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">ContainerCoordinator</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span> <span class="p">:</span> <span class="kt"><a href="../Classes/Coordinator.html">Coordinator</a></span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">,</span> <span class="kt">HasChildren</span> <span class="k">where</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="kt">T</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/Coordinated.html">Coordinated</a></span></code></pre>
+
+                </div>
+              </div>
+            <p>The simplest Coordinator that can have other children Coordinators.</p>
+
+<p>This does everything that Coordinator does plus managing the hierarchy and navigation flow, i.e. how the children are presented and where in the navigation flow.
+The idea is that you can use it as a <q>switch</q> between any kind of Coordinator.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Coordinate20ContainerCoordinatorC17childCoordinatorsSDySSAA12Coordinating_pGvp"></a>
+                    <a name="//apple_ref/swift/Property/childCoordinators" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Coordinate20ContainerCoordinatorC17childCoordinatorsSDySSAA12Coordinating_pGvp">childCoordinators</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>An array containing the children Coordinators</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">private(set)</span> <span class="kd">public</span> <span class="k">var</span> <span class="nv">childCoordinators</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/Coordinating.html">Coordinating</a></span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/codexperience-io/coordinate/tree/master/Coordinate/ContainerCoordinator.swift#L21">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Coordinate20ContainerCoordinatorC21currentViewControllerSo06UIViewF0CSgvp"></a>
+                    <a name="//apple_ref/swift/Property/currentViewController" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Coordinate20ContainerCoordinatorC21currentViewControllerSo06UIViewF0CSgvp">currentViewController</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The currently presented UIViewController inside this Coordinator</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">private(set)</span> <span class="kd">open</span> <span class="k">var</span> <span class="nv">currentViewController</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/codexperience-io/coordinate/tree/master/Coordinate/ContainerCoordinator.swift#L24">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Helper%20Methods"></a>
+                <a name="//apple_ref/swift/Section/Helper Methods" class="dashAnchor"></a>
+                <a href="#/Helper%20Methods">
+                  <h3 class="section-name">Helper Methods</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Coordinate20ContainerCoordinatorC9getCachedyqd__Sgqd__mlF"></a>
+                    <a name="//apple_ref/swift/Method/getCached(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Coordinate20ContainerCoordinatorC9getCachedyqd__Sgqd__mlF">getCached(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns a cached children Coordinator if it exists</p>
+
+<p>Use this method to verify if the Coordinator you want to present is not already in use to avoid wasting resources or creating conflicts</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="n">getCached</span><span class="o">&lt;</span><span class="kt">C</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">coordinatorType</span><span class="p">:</span> <span class="kt">C</span><span class="o">.</span><span class="k">Type</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">C</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>coordinatorType</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The Coordinator.Type from the Coordinator to be returned.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/codexperience-io/coordinate/tree/master/Coordinate/ContainerCoordinator.swift#L74-L77">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Presentation%20methods%20mirroring%20UIViewController"></a>
+                <a name="//apple_ref/swift/Section/Presentation methods mirroring UIViewController" class="dashAnchor"></a>
+                <a href="#/Presentation%20methods%20mirroring%20UIViewController">
+                  <h3 class="section-name">Presentation methods mirroring UIViewController</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Coordinate20ContainerCoordinatorC4show_6senderyAA12Coordinating_p_ypSgtF"></a>
+                    <a name="//apple_ref/swift/Method/show(_:sender:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Coordinate20ContainerCoordinatorC4show_6senderyAA12Coordinating_p_ypSgtF">show(_:sender:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Analog to UIViewController&rsquo;s <code>show(_ vc: UIViewController, sender: Any?)</code> method but for Coordinators.</p>
+
+<p>It makes sure that the Coordinator is properly initialized before presenting its rootViewController.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">show</span><span class="p">(</span><span class="n">_</span> <span class="nv">coordinator</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Coordinating.html">Coordinating</a></span><span class="p">,</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">Any</span><span class="p">?)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>coordinator</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The Coordinator with the rootViewController to be presented.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sender</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The sender.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/codexperience-io/coordinate/tree/master/Coordinate/ContainerCoordinator.swift#L108-L111">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Coordinate20ContainerCoordinatorC7present_8animated10completionyAA12Coordinating_p_SbyycSgtF"></a>
+                    <a name="//apple_ref/swift/Method/present(_:animated:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Coordinate20ContainerCoordinatorC7present_8animated10completionyAA12Coordinating_p_SbyycSgtF">present(_:animated:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Analog to UIViewController&rsquo;s <code>present(_ viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -&gt; Void)? = nil)</code> method but for Coordinators.</p>
+
+<p>It makes sure that the Coordinator is properly initialized before presenting its rootViewController</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">present</span><span class="p">(</span><span class="n">_</span> <span class="nv">coordinator</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Coordinating.html">Coordinating</a></span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="p">(()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>coordinator</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The Coordinator with the rootViewController to be presented.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>animated</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Whether the transition should be animated or not.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The block to execute after the presentation finishes. This block has no return value and takes no parameters. You may specify nil for this parameter.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/codexperience-io/coordinate/tree/master/Coordinate/ContainerCoordinator.swift#L122-L125">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Coordinate20ContainerCoordinatorC7dismiss8animated10completionySb_yycSgtF"></a>
+                    <a name="//apple_ref/swift/Method/dismiss(animated:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Coordinate20ContainerCoordinatorC7dismiss8animated10completionySb_yycSgtF">dismiss(animated:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Analog to UIViewController&rsquo;s <code>dismiss(animated flag: Bool, completion: (() -&gt; Void)? = nil)</code> method but for Coordinators.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">dismiss</span><span class="p">(</span><span class="nv">animated</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="p">(()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>animated</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Whether the transition should be animated or not.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The block to execute after the presentation finishes. This block has no return value and takes no parameters. You may specify nil for this parameter.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/codexperience-io/coordinate/tree/master/Coordinate/ContainerCoordinator.swift#L134-L136">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Custom%20presentation%20methods"></a>
+                <a name="//apple_ref/swift/Section/Custom presentation methods" class="dashAnchor"></a>
+                <a href="#/Custom%20presentation%20methods">
+                  <h3 class="section-name">Custom presentation methods</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Coordinate20ContainerCoordinatorC4root_8animated10completionyAA12Coordinating_p_SbyycSgtF"></a>
+                    <a name="//apple_ref/swift/Method/root(_:animated:completion:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Coordinate20ContainerCoordinatorC4root_8animated10completionyAA12Coordinating_p_SbyycSgtF">root(_:animated:completion:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>On a ContainerCoordinator, we can stack other Coordinators and change them with or without animation with this method.</p>
+
+<p>You can override this method and use custom Animations/Transitions.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">func</span> <span class="nf">root</span><span class="p">(</span><span class="n">_</span> <span class="nv">coordinator</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Coordinating.html">Coordinating</a></span><span class="p">,</span> <span class="nv">animated</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="p">(()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>coordinator</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The Coordinator with the rootViewController to be presented.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>animated</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Whether the transition should be animated or not.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>completion</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The block to execute after the presentation finishes. This block has no return value and takes no parameters. You may specify nil for this parameter.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/codexperience-io/coordinate/tree/master/Coordinate/ContainerCoordinator.swift#L149-L184">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2019 <a class="link" href="https://codexperience.io" target="_blank" rel="external">codexperience.io</a>. All rights reserved. (Last updated: 2019-09-03)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.10.0</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

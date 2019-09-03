@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Coordinating Protocol Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Protocol/Coordinating" class="dashAnchor"></a>
+    <a title="Coordinating Protocol Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">Coordinate 1.0.0 Docs</a> (100% documented)</p>
+        <p class="header-right"><a href="https://github.com/codexperience-io/coordinate/"><img src="../img/gh.png"/>View on GitHub</a></p>
+        <p class="header-right"><a href="dash-feed://https%3A%2F%2Fcoordinate%2Ecodexperience%2Eio%2Fapi%2Fdocsets%2FCoordinate%2Exml"><img src="../img/dash.png"/>Install in Dash</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">Coordinate Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        Coordinating Protocol Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/ContainerCoordinator.html">ContainerCoordinator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Coordinator.html">Coordinator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/NavigationCoordinator.html">NavigationCoordinator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TabBarCoordinator.html">TabBarCoordinator</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/UIResponder.html">UIResponder</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols.html#/s:10Coordinate23AppDependenciesProtocolP">AppDependenciesProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols.html#/s:10Coordinate0A6EventsP">CoordinateEvents</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Coordinated.html">Coordinated</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Coordinating.html">Coordinating</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/HasDependencies.html">HasDependencies</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/HasDependenciesProtocol.html">HasDependenciesProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/HasEvents.html">HasEvents</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/HasRoutes.html">HasRoutes</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>Coordinating</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">Coordinating</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/Coordinated.html">Coordinated</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/HasEvents.html">HasEvents</a></span></code></pre>
+
+                </div>
+              </div>
+            <p>This protocol is the base for every Coordinator, which is to encapsulate the rootViewController and be able to be coordinated by a parent Coordinator</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Coordinate12CoordinatingP10identifierSSvp"></a>
+                    <a name="//apple_ref/swift/Property/identifier" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Coordinate12CoordinatingP10identifierSSvp">identifier</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Unique string to identify specific Coordinator instance.</p>
+
+<p>By default it will be the String representation of the Coordinator&rsquo;s subclass.
+If you directly instantiate <code><a href="../Classes/Coordinator.html">Coordinator&lt;T&gt;</a></code>, then you need to set it manually.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">identifier</span><span class="p">:</span> <span class="kt">String</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/codexperience-io/coordinate/tree/master/Coordinate/Coordinating.swift#L28">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Coordinate12CoordinatingP9isStartedSbvp"></a>
+                    <a name="//apple_ref/swift/Property/isStarted" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Coordinate12CoordinatingP9isStartedSbvp">isStarted</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Bool indicating if Coordinator is started.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">isStarted</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/codexperience-io/coordinate/tree/master/Coordinate/Coordinating.swift#L31">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Coordinate12CoordinatingP5start4withyyyc_tF"></a>
+                    <a name="//apple_ref/swift/Method/start(with:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Coordinate12CoordinatingP5start4withyyyc_tF">start(with:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Starts the Coordinator.</p>
+
+<p>Override this method if you want to perform any setup before the Coordinator presents anything.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">start</span><span class="p">(</span><span class="n">with</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/codexperience-io/coordinate/tree/master/Coordinate/Coordinating.swift#L38">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Coordinate12CoordinatingP4stop4withyyyc_tF"></a>
+                    <a name="//apple_ref/swift/Method/stop(with:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Coordinate12CoordinatingP4stop4withyyyc_tF">stop(with:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Stops the Coordinator.</p>
+
+<p>Override this method to perform any logic before the Coordinator is deinitialized</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">stop</span><span class="p">(</span><span class="n">with</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/codexperience-io/coordinate/tree/master/Coordinate/Coordinating.swift#L45">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Coordinate12CoordinatingP8activateyyF"></a>
+                    <a name="//apple_ref/swift/Method/activate()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Coordinate12CoordinatingP8activateyyF">activate()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Activate Coordinator which was started before.</p>
+
+<p>This method is used when the Coordinator is visible again, giving you the chanee to do things like refreshing data, track screen, etc.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">activate</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/codexperience-io/coordinate/tree/master/Coordinate/Coordinating.swift#L52">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Coordinate12CoordinatingP21getRootViewControllerSo06UIViewF0CyF"></a>
+                    <a name="//apple_ref/swift/Method/getRootViewController()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Coordinate12CoordinatingP21getRootViewControllerSo06UIViewF0CyF">getRootViewController()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the Coordinator rootViewController</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">getRootViewController</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">UIViewController</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/codexperience-io/coordinate/tree/master/Coordinate/Coordinating.swift#L55">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2019 <a class="link" href="https://codexperience.io" target="_blank" rel="external">codexperience.io</a>. All rights reserved. (Last updated: 2019-09-03)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.10.0</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

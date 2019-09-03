@@ -9,14 +9,38 @@
 
 import UIKit
 
+/**
+ Base protocol to be used on the enums that define events
+*/
 public protocol CoordinateEvents {}
 
-public protocol HasEvents {
+/**
+ Protocol to be used in any Class that needs to emit and intercept events
+*/
+public protocol HasEvents: AnyObject {
+    /**
+     Emits an Event that will bubble up the UIResponder chain until reaches the first Coordinator, where it will continue to bubble up
+     
+     - Parameter event: The event to emit
+     */
     func emitEvent(_ event: CoordinateEvents) -> Void
+    
+    /**
+     Intercepts events and react to them. Return true to stop the event propagation, return false to continue event propagation
+     
+     - Parameter event: The event to intercept
+     
+     If you override this method, you can cast the event parameter to the desired enum you wish to compare.
+     */
     func interceptEvent(_ event: CoordinateEvents) -> Bool
 }
 
 public extension UIResponder {
+    /**
+     Emits an Event that will bubble up the UIResponder chain until reaches the first Coordinator, where it will continue to bubble up
+     
+     - Parameter event: The event to emit
+     */
     func emitEvent(_ event: CoordinateEvents) -> Void {
         if self.interceptEvent(event) == false {
             if let coordinator = (self as? Coordinated)?.parentCoordinator {
@@ -37,6 +61,13 @@ public extension UIResponder {
         }
     }
     
+    /**
+     Intercepts events and react to them. Return true to stop the event propagation, return false to continue event propagation
+     
+     - Parameter event: The event to intercept
+     
+     If you override this method, you can cast the event parameter to the desired enum you wish to compare.
+     */
     func interceptEvent(_ event: CoordinateEvents) -> Bool {
         return false
     }

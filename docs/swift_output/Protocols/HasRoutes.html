@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>HasRoutes Protocol Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Protocol/HasRoutes" class="dashAnchor"></a>
+    <a title="HasRoutes Protocol Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">Coordinate 1.0.0 Docs</a> (100% documented)</p>
+        <p class="header-right"><a href="https://github.com/codexperience-io/coordinate/"><img src="../img/gh.png"/>View on GitHub</a></p>
+        <p class="header-right"><a href="dash-feed://https%3A%2F%2Fcoordinate%2Ecodexperience%2Eio%2Fapi%2Fdocsets%2FCoordinate%2Exml"><img src="../img/dash.png"/>Install in Dash</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">Coordinate Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        HasRoutes Protocol Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/ContainerCoordinator.html">ContainerCoordinator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Coordinator.html">Coordinator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/NavigationCoordinator.html">NavigationCoordinator</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TabBarCoordinator.html">TabBarCoordinator</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/UIResponder.html">UIResponder</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols.html#/s:10Coordinate23AppDependenciesProtocolP">AppDependenciesProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols.html#/s:10Coordinate0A6EventsP">CoordinateEvents</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Coordinated.html">Coordinated</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Coordinating.html">Coordinating</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/HasDependencies.html">HasDependencies</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/HasDependenciesProtocol.html">HasDependenciesProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/HasEvents.html">HasEvents</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/HasRoutes.html">HasRoutes</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>HasRoutes</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">HasRoutes</span> <span class="p">:</span> <span class="kt">AnyObject</span></code></pre>
+
+                </div>
+              </div>
+            <p>Protocol to indicate your Coordinator has Routes. Future implementation will try and base on this to provide ways of managing routing easier</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Coordinate9HasRoutesP9RouteTypeQa"></a>
+                    <a name="//apple_ref/swift/Alias/RouteType" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Coordinate9HasRoutesP9RouteTypeQa">RouteType</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Associatedtype RouteType</p>
+
+<p>This will be deduced from setting the property activeRoute</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">associatedtype</span> <span class="kt">RouteType</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/codexperience-io/coordinate/tree/master/Coordinate/HasRoutes.swift#L17">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Coordinate9HasRoutesP11activeRoute0E4TypeQzvp"></a>
+                    <a name="//apple_ref/swift/Property/activeRoute" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Coordinate9HasRoutesP11activeRoute0E4TypeQzvp">activeRoute</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The currently active route on this class</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">activeRoute</span><span class="p">:</span> <span class="kt"><a href="../Protocols/HasRoutes.html#/s:10Coordinate9HasRoutesP9RouteTypeQa">RouteType</a></span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/codexperience-io/coordinate/tree/master/Coordinate/HasRoutes.swift#L22">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10Coordinate9HasRoutesP4goToyy9RouteTypeQzF"></a>
+                    <a name="//apple_ref/swift/Method/goTo(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10Coordinate9HasRoutesP4goToyy9RouteTypeQzF">goTo(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This method tries to change the route state to the desired parameter. If successful, the property activeRoute will reflect the passed parameter.</p>
+
+<p>If you override this method, you can check if the user has access to that specific route before changing the activeRoute and presenting a new Coordinator.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">goTo</span><span class="p">(</span><span class="n">_</span> <span class="nv">route</span><span class="p">:</span> <span class="kt"><a href="../Protocols/HasRoutes.html#/s:10Coordinate9HasRoutesP9RouteTypeQa">RouteType</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>route</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The desired route</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/codexperience-io/coordinate/tree/master/Coordinate/HasRoutes.swift#L31">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2019 <a class="link" href="https://codexperience.io" target="_blank" rel="external">codexperience.io</a>. All rights reserved. (Last updated: 2019-09-03)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.10.0</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

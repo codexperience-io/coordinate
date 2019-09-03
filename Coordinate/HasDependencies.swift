@@ -9,21 +9,38 @@
 
 import Foundation
 
-// Base protocol for AppDependencies, use this as the base of your AppDependecies struct to make it work with the Coordinators
+/// Base protocol for AppDependencies, use this as the base of your AppDependecies struct to make it work with the Coordinators.
 public protocol AppDependenciesProtocol {}
 
-// This protocol is for intern use only, do no use it
+/// This protocol is for intern use only, do no use it.
 public protocol HasDependenciesProtocol: AnyObject {
+    /**
+     This is used intead of a direct property assignment.
+     
+     - Parameter dependencies: The dependencies to be set.
+    */
     func setDependencies(dependencies: AppDependenciesProtocol?)
+    
+    /**
+     Returns the dependencies
+    */
     func getDepencencies() -> AppDependenciesProtocol?
 }
 
-// Use this protocol in your Coordinators to enable automatic dependency injection
+/// Use this protocol in your Coordinators to enable automatic dependency injection
 public protocol HasDependencies: HasDependenciesProtocol {
+    /**
+     This is inferred from dependencies property
+    */
     associatedtype DependeciesType: AppDependenciesProtocol
+    
+    /**
+     Set this with an object that conform to `AppDependenciesProtocol`, but never to `AppDependenciesProtocol` directly.
+    */
     var dependencies: DependeciesType? { get set }
 }
 
+/// Give Coordinators the ability to handle dependencies
 public extension HasDependencies where Self: Coordinating {
     func setDependencies(dependencies: AppDependenciesProtocol?) {
         if let dependencies = dependencies as? DependeciesType {
