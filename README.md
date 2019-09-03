@@ -14,7 +14,7 @@ But because it is a simple library, you can actually combine with frameworks/lib
 **Coordinate** is available with CocoaPods:
 
 ```
-pod 'Coordinate', 	:git => 'https://github.com/codexperience-io/coordinate.git'
+pod 'Coordinate'
 ```
 
 More details on the [installation](../installation) page.
