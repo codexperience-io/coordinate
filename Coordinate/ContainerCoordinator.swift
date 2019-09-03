@@ -23,7 +23,7 @@ open class ContainerCoordinator<T>: Coordinator<T>, HasChildren where T: UIViewC
     /// The currently presented UIViewController inside this Coordinator
     private(set) open var currentViewController: UIViewController?
     
-    //    MARK:- Containment
+    // MARK: - Containment
     
     /**
      Adds new child Coordinator.
@@ -91,7 +91,6 @@ open class ContainerCoordinator<T>: Coordinator<T>, HasChildren where T: UIViewC
     }
     
     // MARK: - Presentation methods mirroring UIViewController
-    
     
     // The idea here is to provide the Coordinator with the ability to present its children Coordinator, without having to refer the children rootViewController. Because this is the base Coordinator class and its rootViewControoler is supposed to be a base UIVIewController, this is essentially a mirror of the main presentation methods of UIVIewController, just using Coordinator as its argument.
      

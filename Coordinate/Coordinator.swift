@@ -35,13 +35,13 @@ open class Coordinator<T>: NSObject, Coordinating where T: UIViewController, T: 
     
      If you need to override this, because your T needs arguments to be initialized or other reason, do not forget to assign this Coordinator rootViewController and the UIViewController Coordinator to this instance. This is essentially the required connection to make the rest work.
     */
-    public override init()  {
+    public override init() {
         self.rootViewController = T()
         super.init()
         rootViewController.parentCoordinator = self
     }
     
-    // MARK:- Lifecycle
+    // MARK: - Lifecycle
     
     /**
      Use this method to start anything that might be necessary before its rootViewController is presented.

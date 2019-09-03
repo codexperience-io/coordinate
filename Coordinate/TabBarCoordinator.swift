@@ -63,7 +63,7 @@ open class TabBarCoordinator<T>: ContainerCoordinator<T>, UITabBarControllerDele
         select(coordinator)
     }
     
-    // MARK:- Navigation
+    // MARK: - Navigation
     
     /**
      Allows you to programatically select a Tab corresponding to the Coordinator you want
@@ -84,7 +84,7 @@ open class TabBarCoordinator<T>: ContainerCoordinator<T>, UITabBarControllerDele
         rootViewController.selectedIndex = index
     }
     
-    // MARK:- UITabBarControllerDelegate
+    // MARK: - UITabBarControllerDelegate
     
     /**
      Deactivate automatic Tab switch on UITabBarController

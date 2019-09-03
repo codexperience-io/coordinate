@@ -23,7 +23,7 @@ public protocol HasEvents: AnyObject {
      
      - Parameter event: The event to emit
      */
-    func emitEvent(_ event: CoordinateEvents) -> Void
+    func emitEvent(_ event: CoordinateEvents)
     
     /**
      Intercepts events and react to them. Return true to stop the event propagation, return false to continue event propagation
@@ -41,7 +41,7 @@ public extension UIResponder {
      
      - Parameter event: The event to emit
      */
-    func emitEvent(_ event: CoordinateEvents) -> Void {
+    func emitEvent(_ event: CoordinateEvents) {
         if self.interceptEvent(event) == false {
             if let coordinator = (self as? Coordinated)?.parentCoordinator {
                 coordinator.emitEvent(event)

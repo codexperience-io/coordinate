@@ -21,7 +21,7 @@ open class NavigationCoordinator<T>: ContainerCoordinator<T>, UINavigationContro
     */
     private(set) open var currentViewControllers: [UIViewController] = []
 
-    //  MARK:- Coordinator lifecycle
+    // MARK: - Coordinator lifecycle
 
     /**
      Starts the Coordinator.
@@ -65,9 +65,9 @@ open class NavigationCoordinator<T>: ContainerCoordinator<T>, UINavigationContro
         let viewController = coordinator.getRootViewController()
 
         if rootViewController.viewControllers.first != viewController {
-            self.rootViewController.setViewControllers([viewController], animated: false)
+            self.rootViewController.setViewControllers([viewController], animated: animated)
         } else {
-            self.popToCoordinator(coordinator, animated: false)
+            self.popToCoordinator(coordinator, animated: animated)
         }
     }
     
